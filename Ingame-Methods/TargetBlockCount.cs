@@ -2,7 +2,7 @@
 
 /*
 Description:
-	 - This method count the number of blocks on a specified grid.
+	 - This method counts the number of blocks on a specified grid.
 
 Dependancies:
 	 - NPC Programming Extender mod.
