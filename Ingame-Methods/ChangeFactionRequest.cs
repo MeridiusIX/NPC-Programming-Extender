@@ -1,54 +1,30 @@
-//NPC Programming Extender - CreateItemInInventory
+//NPC Programming Extender - ChangeFactionRequest
 
 /*
 Description:
-	 - This method allows you to create and add any inventory
-	 item to a block inventory. You will need to provide the
-	 item TypeId (acceptable types found below), the item 
-	 SubtypeId
+	 - This method allows you to change the ownership of the
+	 grid the PB is run from to a new NPC faction
 
 Dependancies:
 	 - NPC Programming Extender mod.
 
 Arguments:
-	string type
+	string factionTag
 		//The new faction tag you want to switch to.
-	 
-	string subtype
-		//The new faction tag you want to switch to.
-	
-	float amount
-		//The new faction tag you want to switch to.
-	
-	long blockEntityId
-		//The new faction tag you want to switch to.
-*/
-
-/*
-	Valid ObjectBuilders for use in "type" argument:
-	
-	MyObjectBuilder_Ore
-	MyObjectBuilder_Ingot
-	MyObjectBuilder_Component
-	MyObjectBuilder_AmmoMagazine
-	MyObjectBuilder_PhysicalGunObject
-	MyObjectBuilder_OxygenContainerObject
-	MyObjectBuilder_GasContainerObject
 	
 */
 
-bool CreateItemInInventory(string type, string subtype, float amount, long blockEntityId){
-
-	Me.CustomData = type + "\n" + subtype + "\n" + amount.ToString() + "\n" + blockEntityId.ToString();
+bool ChangeNPCFaction(string factionTag){
 	
 	try{
 		
-		return Me.GetValue<bool>("NpcExtender-CreateItemInInventory");
+		Me.CustomData = factionTag;
+		return Me.GetValue<bool>("NpcExtender-ChangeFactionRequest");
 		
 	}catch(Exception exc){
 		
 		return false;
 		
 	}
-	
+
 }
