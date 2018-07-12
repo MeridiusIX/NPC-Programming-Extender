@@ -1,25 +1,28 @@
+//NPC Programming Extender - GetNearestPlanetPosition
 
+/*
+Description:
+	 - This method will get the coordinates of the nearest planet
+	 to the provided coordinates.
+Dependancies:
+	 - NPC Programming Extender mod.
+Arguments:
+	Vector3D checkCoords
+		//The coordinates you want to check for the closest
+		//planet near.
+*/
 
+Vector3D GetNearestPlanetPosition(Vector3D checkCoords){
 
-Vector3D GetNearestPlanetPosition(IMyTerminalBlock sourceBlock){
-			
-			Vector3D checkCoords = new Vector3D(0,0,0);
-			
-			if(Vector3D.TryParse(sourceBlock.CustomData, out checkCoords) == false){
-				
-				return checkCoords;
-				
-			}
-			
-			var planet = MyGamePruningStructure.GetClosestPlanet(checkCoords);
-			
-			if(planet == null){
-				
-				return checkCoords;
-				
-			}
-			
-			var planetEntity = planet as IMyEntity;
-			return planetEntity.GetPosition();
-			
-		}
+	try{
+		
+		Me.CustomData = checkCoords.ToString();
+		return Me.GetValue<Vector3D>("NpcExtender-GetNearestPlanetPosition");
+		
+	}catch(Exception exc){
+		
+		return Vector3D.Zero;
+		
+	}
+
+}
