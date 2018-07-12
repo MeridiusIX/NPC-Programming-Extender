@@ -1,0 +1,25 @@
+
+
+
+
+bool BroadcastNotification(string message, int duration, string fontColor, double broadcastDistance = 15000, string audioClip = ""){
+	
+	if(broadcastDistance == 0 || message == "" || duration == 0){
+		
+		return false;
+		
+	}
+	
+	try{
+		
+		string sendData = message + "\n" + duration.ToString() + "\n" + fontColor + "\n" + broadcastDistance.ToString() + "\n" + audioClip;
+		Me.CustomData = sendData;
+		return Me.GetValue<bool>("NpcExtender-BroadcastNotification");
+		
+	}catch(Exception exc){
+		
+		return false;
+		
+	}
+	
+}
