@@ -3,20 +3,28 @@
 /*
 Description:
 	 - This method allows NPCs to send messages through the
-	 ingame chat system. The message will reach any player
-	 within the range of the NPC's active antenna. Audio can
-	 also be attached to these messages as well.
+	 ingame notification system. The message will reach any player
+	 player within the specified range provided.
 Dependancies:
 	 - NPC Programming Extender mod.
 Arguments:
 	string message
-		//The chat message you want to display.
+		//The notification message you want to display.
 		
-	string author
-		//The name of the message sender/author.
+	int duration
+		//The duration the notification will remain on screen
+		//This is measured in milliseconds.
+		
+	string fontColor
+		//The color of the notification font. Can be Green, Red, White
+		
+	double broadcastDistance
+		//Any player within the specified distance from the drone will
+		//receive the notification.
 		
 	string audioClip
-		//The SubtypeId of the audio clip you want to play.
+		//If provided, the notification will also player a sound clip.
+		//The argument should be the SubtypeId of the audio definition.
 */
 
 bool BroadcastNotification(string message, int duration, string fontColor, double broadcastDistance = 15000, string audioClip = ""){
