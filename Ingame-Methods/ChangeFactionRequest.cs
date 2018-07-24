@@ -7,7 +7,6 @@ Description:
 
 Dependancies:
 	 - NPC Programming Extender mod.
-
 Arguments:
 	string factionTag
 		//The new faction tag you want to switch to.
