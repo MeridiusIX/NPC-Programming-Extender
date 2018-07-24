@@ -1,10 +1,10 @@
-
 //NPC Programming Extender - ChangeFactionRequest
 
 /*
 Description:
 	 - This method allows you to change the ownership of the
 	 grid the PB is run from to a new NPC faction
+
 Dependancies:
 	 - NPC Programming Extender mod.
 Arguments:
