@@ -27,7 +27,13 @@ Valid Arguments for targetSystems
 	"Production"       //Refineries / Assemblers / Gas Generators
 	"Propulsion"       //Thrusters
 	"Weapons"          //Turrets / Fixed Weapons
+	
+	TypeId		   //You can provide the TypeId (as string) of
+			   //any block to target just that type of block
+			   //Eg: MyObjectBuilder_Reactor
 */
+
+
 
 long GetTargetShipSystem(long targetEntityId, string targetSystems = "Controller"){
 	
